@@ -410,19 +410,19 @@ html {
 .viajecito-bg {
     background:
         linear-gradient(rgba(20,33,61,0.45), rgba(20,33,61,0.35)),
-        url('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=800&q=80') center/cover;
+        url('viajecito imagen 1.webp') center/cover;
 }
 
 .promo-bg {
     background:
         linear-gradient(rgba(0,153,229,0.5), rgba(20,33,61,0.5)),
-        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80') center/cover;
+        url('promociones imagen 1.webp') center/cover;
 }
 
 .intl-bg {
     background:
         linear-gradient(rgba(29,66,138,0.55), rgba(0,163,224,0.35)),
-        url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80') center/cover;
+        url('internacional imagen 1.webp') center/cover;
 }
 
 .card-body { padding: 28px 30px 32px; }
