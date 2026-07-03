@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terra Agencia de Viajes | Cumpliendo el viaje de tus sueños</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       LANGUAGE TOGGLE (Pure CSS)
+  ══════════════════════════════════════════ -->
+  <input type="radio" name="lang" id="lang-es" class="lang-radio" checked>
+  <input type="radio" name="lang" id="lang-en" class="lang-radio">
+
+  <!-- ══════════════════════════════════════════
+       GALLERY MODALS (Pure CSS checkboxes)
+  ══════════════════════════════════════════ -->
+
+  <!-- Modal: Viajecito Nacional -->
+  <input type="checkbox" id="modal-nacional" class="modal-toggle">
+  <div class="modal-overlay">
+    <label for="modal-nacional" class="modal-backdrop"></label>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="es-text">Viajecito – Destinos Nacionales</h3>
+        <h3 class="en-text">Viajecito – National Destinations</h3>
+        <label for="modal-nacional" class="modal-close" aria-label="Cerrar">✕</label>
+      </div>
+      <div class="modal-gallery" id="gallery-nacional">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Promociones -->
+  <input type="checkbox" id="modal-promo" class="modal-toggle">
+  <div class="modal-overlay">
+    <label for="modal-promo" class="modal-backdrop"></label>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="es-text">Promociones del Mes</h3>
+        <h3 class="en-text">Monthly Promotions</h3>
+        <label for="modal-promo" class="modal-close" aria-label="Cerrar">✕</label>
+      </div>
+      <div class="modal-gallery" id="gallery-promo">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Internacional -->
+  <input type="checkbox" id="modal-intl" class="modal-toggle">
+  <div class="modal-overlay">
+    <label for="modal-intl" class="modal-backdrop"></label>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="es-text">Viajecito Internacional</h3>
+        <h3 class="en-text">Viajecito International</h3>
+        <label for="modal-intl" class="modal-close" aria-label="Cerrar">✕</label>
+      </div>
+      <div class="modal-gallery" id="gallery-intl">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+
+      <!-- LOGO SVG -->
+      <a href="#hero" class="logo-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" class="logo-svg" aria-label="Terra Agencia de Viajes">
+          <g id="LogoText">
+            <text x="40" y="370" fill="var(--cyan)" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">Te</text>
+            <text x="365" y="370" fill="var(--navy)" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">rr</text>
+            <text x="615" y="370" fill="var(--navy)" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">a</text>
+            <text x="80" y="450" fill="var(--navy)" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="bold" letter-spacing="11">AGENCIA DE VIAJES</text>
+          </g>
+          <g id="IconElements">
+            <path d="M 535,128 C 620,35 760,30 860,95 C 960,160 990,290 945,390" fill="none" stroke="var(--cyan)" stroke-width="24" stroke-linecap="round"/>
+            <path d="M 945,390 C 910,465 815,515 720,500 C 600,480 525,360 555,250" fill="none" stroke="var(--navy)" stroke-width="24" stroke-linecap="round"/>
+            <path d="M 765,375 C 840,365 860,260 810,195 C 785,162 745,155 725,153" fill="none" stroke="var(--navy)" stroke-width="6" stroke-linecap="round"/>
+            <path d="M 724,110 L 692,132 L 655,110 C 650,107 645,112 648,117 L 670,148 L 668,172 L 680,164 L 688,176 C 690,179 695,178 694,174 L 691,162 L 704,154 L 733,180 C 737,184 743,180 740,175 L 722,142 L 734,124 C 737,118 731,114 724,110 Z" fill="var(--navy)"/>
+          </g>
+        </svg>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#hero"     class="nav-link es-text">Inicio</a>
+        <a href="#destinos" class="nav-link es-text">Destinos</a>
+        <a href="#cotizar"  class="nav-link es-text">Cotizar</a>
+        <a href="#contacto" class="nav-link es-text">Contacto</a>
+        <a href="#hero"     class="nav-link en-text">Home</a>
+        <a href="#destinos" class="nav-link en-text">Destinations</a>
+        <a href="#cotizar"  class="nav-link en-text">Quote</a>
+        <a href="#contacto" class="nav-link en-text">Contact</a>
+      </nav>
+
+      <div class="nav-right">
+        <div class="lang-switcher">
+          <label for="lang-es" class="lang-btn es-trigger">ESP</label>
+          <label for="lang-en" class="lang-btn en-trigger">ENG</label>
+        </div>
+        <!-- Hamburger (mobile) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+        <label for="menu-toggle" class="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+      <a href="#hero"     class="mobile-link es-text">Inicio</a>
+      <a href="#destinos" class="mobile-link es-text">Destinos</a>
+      <a href="#cotizar"  class="mobile-link es-text">Cotizar</a>
+      <a href="#contacto" class="mobile-link es-text">Contacto</a>
+      <a href="#hero"     class="mobile-link en-text">Home</a>
+      <a href="#destinos" class="mobile-link en-text">Destinations</a>
+      <a href="#cotizar"  class="mobile-link en-text">Quote</a>
+      <a href="#contacto" class="mobile-link en-text">Contact</a>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       HERO – CINEMATIC SLIDER
+  ══════════════════════════════════════════ -->
+  <section id="hero" class="hero-section">
+
+    <!-- Slide 1: Nacional / Pueblos Mágicos -->
+    <div class="slide slide-1" aria-hidden="false">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content container">
+        <span class="slide-eyebrow es-text">🌄 México te espera</span>
+        <span class="slide-eyebrow en-text">🌄 Mexico awaits you</span>
+        <h1 class="es-text">Pueblos Mágicos<br><em>&amp; Playas Mexicanas</em></h1>
+        <h1 class="en-text">Magic Towns<br><em>&amp; Mexican Beaches</em></h1>
+        <p class="es-text">Descubre la magia de México: desde coloridos pueblos coloniales hasta playas paradisíacas.</p>
+        <p class="en-text">Discover the magic of Mexico: from colorful colonial towns to paradisiacal beaches.</p>
+        <div class="slide-actions">
+          <label for="modal-nacional" class="btn btn-primary es-text">Ver destinos</label>
+          <label for="modal-nacional" class="btn btn-primary en-text">See destinations</label>
+          <a href="#cotizar" class="btn btn-ghost es-text">Cotizar ahora</a>
+          <a href="#cotizar" class="btn btn-ghost en-text">Get a quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Internacional -->
+    <div class="slide slide-2" aria-hidden="true">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slide-overlay slide-overlay--blue"></div>
+      <div class="slide-content container">
+        <span class="slide-eyebrow es-text">✈️ El mundo te llama</span>
+        <span class="slide-eyebrow en-text">✈️ The world is calling</span>
+        <h1 class="es-text">Viajes<br><em>Internacionales</em></h1>
+        <h1 class="en-text">International<br><em>Travel</em></h1>
+        <p class="es-text">Europa, Asia, el Caribe y más — diseñamos tu itinerario exclusivo a cualquier rincón del mundo.</p>
+        <p class="en-text">Europe, Asia, the Caribbean and more — we design your exclusive itinerary to any corner of the world.</p>
+        <div class="slide-actions">
+          <label for="modal-intl" class="btn btn-primary es-text">Ver destinos</label>
+          <label for="modal-intl" class="btn btn-primary en-text">See destinations</label>
+          <a href="#cotizar" class="btn btn-ghost es-text">Cotizar ahora</a>
+          <a href="#cotizar" class="btn btn-ghost en-text">Get a quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Promociones -->
+    <div class="slide slide-3" aria-hidden="true">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slide-overlay slide-overlay--teal"></div>
+      <div class="slide-content container">
+        <span class="slide-eyebrow es-text">🏷️ Ofertas exclusivas</span>
+        <span class="slide-eyebrow en-text">🏷️ Exclusive deals</span>
+        <h1 class="es-text">Promociones<br><em>del Mes</em></h1>
+        <h1 class="en-text">This Month's<br><em>Promotions</em></h1>
+        <p class="es-text">Las mejores tarifas en destinos nacionales e internacionales, solo por tiempo limitado.</p>
+        <p class="en-text">The best rates on national and international destinations, for a limited time only.</p>
+        <div class="slide-actions">
+          <label for="modal-promo" class="btn btn-primary es-text">Ver promociones</label>
+          <label for="modal-promo" class="btn btn-primary en-text">See promotions</label>
+          <a href="#cotizar" class="btn btn-ghost es-text">Solicitar cotización</a>
+          <a href="#cotizar" class="btn btn-ghost en-text">Request quote</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <div class="slider-dots">
+      <button class="dot dot-1 active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="dot dot-2" data-slide="1" aria-label="Slide 2"></button>
+      <button class="dot dot-3" data-slide="2" aria-label="Slide 3"></button>
+    </div>
+    <button class="slider-arrow slider-prev" aria-label="Anterior">&#8592;</button>
+    <button class="slider-arrow slider-next" aria-label="Siguiente">&#8594;</button>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       DESTINOS
+  ══════════════════════════════════════════ -->
+  <section id="destinos" class="destinations-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="es-text">Destinos</h2>
+        <h2 class="en-text">Destinations</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Viajecito Nacional -->
+        <div class="dest-card">
+          <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=800&q=80')">
+            <div class="dest-card-overlay"></div>
+            <div class="dest-card-inner">
+              <span class="dest-tag es-text">Nacional</span>
+              <span class="dest-tag en-text">National</span>
+              <h3>Viajecito</h3>
+              <p class="es-text">Playas, pueblos mágicos y ciudades icónicas de México.</p>
+              <p class="en-text">Beaches, magic towns and iconic Mexican cities.</p>
+              <label for="modal-nacional" class="btn btn-card es-text">Ver destinos ›</label>
+              <label for="modal-nacional" class="btn btn-card en-text">See destinations ›</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Promociones -->
+        <div class="dest-card">
+          <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80')">
+            <div class="dest-card-overlay"></div>
+            <div class="dest-card-inner">
+              <span class="dest-tag promo-tag">Ofertas / Deals</span>
+              <h3>Promociones</h3>
+              <p class="es-text">Ofertas especiales del mes: nacionales e internacionales.</p>
+              <p class="en-text">Monthly special offers: national and international.</p>
+              <label for="modal-promo" class="btn btn-card es-text">Ver promociones ›</label>
+              <label for="modal-promo" class="btn btn-card en-text">See promotions ›</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internacional -->
+        <div class="dest-card">
+          <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80')">
+            <div class="dest-card-overlay"></div>
+            <div class="dest-card-inner">
+              <span class="dest-tag es-text">Internacional</span>
+              <span class="dest-tag en-text">International</span>
+              <h3>Viajecito Internacional</h3>
+              <p class="es-text">Europa, Asia, el Caribe y más — el mundo es tuyo.</p>
+              <p class="en-text">Europe, Asia, the Caribbean and more — the world is yours.</p>
+              <label for="modal-intl" class="btn btn-card es-text">Ver destinos ›</label>
+              <label for="modal-intl" class="btn btn-card en-text">See destinations ›</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       COTIZAR
+  ══════════════════════════════════════════ -->
+  <section id="cotizar" class="booking-section">
+    <div class="container">
+      <div class="booking-layout">
+
+        <div class="booking-info">
+          <h2 class="es-text">Planea tu<br>Próxima Aventura</h2>
+          <h2 class="en-text">Plan Your<br>Next Adventure</h2>
+          <p class="es-text">Completa el formulario y te contactamos para presentarte un itinerario exclusivo sin costo. Confirmación por correo y WhatsApp.</p>
+          <p class="en-text">Fill out the form and we'll contact you to present a free exclusive itinerary. Confirmation by email and WhatsApp.</p>
+          <div class="booking-badges">
+            <span class="bbadge es-text">👩‍💼 Empresa Liderada por Mujeres</span>
+            <span class="bbage en-text">👩‍💼 Woman-Owned Business</span>
+            <span class="bbage es-text">⭐⭐⭐⭐⭐ 5.0 en Google</span>
+            <span class="bbage en-text">⭐⭐⭐⭐⭐ 5.0 on Google</span>
+          </div>
+        </div>
+
+        <div class="booking-form-card">
+          <!-- ACTION: reemplaza XXXXXXXX con tu ID de Formspree para activar envío real -->
+          <form action="https://formspree.io/f/XXXXXXXX" method="POST" id="quote-form">
+
+            <input type="hidden" name="_to"      value="viajesagenciaterra@gmail.com">
+            <input type="hidden" name="_replyto" id="hidden-replyto">
+            <input type="hidden" name="_subject" id="hidden-subject" value="Nueva cotización – Terra Agencia de Viajes">
+            <input type="hidden" name="_cc"      id="hidden-cc">
+            <input type="hidden" name="tipo_viaje_detectado" id="hidden-tipo">
+
+            <div class="form-group">
+              <label for="nombre" class="es-text">Nombre completo</label>
+              <label for="nombre" class="en-text">Full name</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required autocomplete="name">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono" class="es-text">Teléfono</label>
+                <label for="telefono" class="en-text">Phone</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+52 656 000 0000" required autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="whatsapp" class="es-text">WhatsApp</label>
+                <label for="whatsapp" class="en-text">WhatsApp</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="+52 656 000 0000" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="es-text">Correo electrónico</label>
+              <label for="email" class="en-text">Email address</label>
+              <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje" class="es-text">Platícanos de tu viaje</label>
+              <label for="mensaje" class="en-text">Tell us about your trip</label>
+              <textarea id="mensaje" name="mensaje" rows="4"
+                placeholder="¿A dónde quieres ir? ¿Cuándo? ¿Cuántas personas? ¿Tienes alguna preferencia especial?…"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">
+              <span class="es-text">Solicitar Cotización Gratis</span>
+              <span class="en-text">Request Free Quote</span>
+            </button>
+
+            <p class="form-note es-text">Recibirás confirmación por correo y WhatsApp. Sin costo ni compromiso.</p>
+            <p class="form-note en-text">You'll receive confirmation by email and WhatsApp. No cost, no commitment.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER / CONTACTO
+  ══════════════════════════════════════════ -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-col footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" class="footer-logo-svg" aria-label="Terra">
+          <g>
+            <text x="40" y="370" fill="#00AEEF" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">Te</text>
+            <text x="365" y="370" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">rr</text>
+            <text x="615" y="370" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">a</text>
+            <text x="80" y="450" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="bold" letter-spacing="11">AGENCIA DE VIAJES</text>
+          </g>
+          <g>
+            <path d="M 535,128 C 620,35 760,30 860,95 C 960,160 990,290 945,390" fill="none" stroke="#00AEEF" stroke-width="24" stroke-linecap="round"/>
+            <path d="M 945,390 C 910,465 815,515 720,500 C 600,480 525,360 555,250" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round"/>
+            <path d="M 765,375 C 840,365 860,260 810,195 C 785,162 745,155 725,153" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+            <path d="M 724,110 L 692,132 L 655,110 C 650,107 645,112 648,117 L 670,148 L 668,172 L 680,164 L 688,176 C 690,179 695,178 694,174 L 691,162 L 704,154 L 733,180 C 737,184 743,180 740,175 L 722,142 L 734,124 C 737,118 731,114 724,110 Z" fill="#ffffff"/>
+          </g>
+        </svg>
+
+        <p class="es-text">Hacemos realidad tus sueños de viaje con la mejor atención y tarifas del mercado.</p>
+        <p class="en-text">We make your travel dreams come true with the best service and market rates.</p>
+
+        <ul class="credentials">
+          <li>🏢 <span class="es-text">Agencia establecida</span><span class="en-text">Established agency</span></li>
+          <li>📋 <span class="es-text">Registro Nacional de Turismo</span><span class="en-text">National Tourism Registry</span></li>
+          <li>🏅 Distintivo M</li>
+          <li>🤝 <span class="es-text">Miembro activo – Sección especializada CANACO Cd. Juárez</span><span class="en-text">Active member – CANACO Cd. Juárez specialized section</span></li>
+        </ul>
+
+        <div class="social-row">
+          <a href="https://www.facebook.com/Viajes.Terra" target="_blank" rel="noopener" class="fb-link" aria-label="Facebook">
+            <svg class="fb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12a10 10 0 1 0-11.563 9.876v-6.988H7.898V12h2.539V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.888h-2.33v6.988A10.003 10.003 0 0 0 22 12z"/>
+            </svg>
+            <span>Viajes Terra</span>
+          </a>
+          <a href="https://www.facebook.com/Viajes.Terra/reviews" target="_blank" class="review-link">⭐⭐⭐⭐⭐ 21 Reviews</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="es-text">Ubicación</h4>
+        <h4 class="en-text">Location</h4>
+        <address>
+          Av. Benjamín Franklin 3220 – Local 5H<br>
+          Margaritas, 32315 Juárez, Chih.<br>
+          <small>(Plaza de las Américas)</small>
+        </address>
+        <div class="contact-links">
+          <a href="tel:6566559713" class="contact-item">
+            📞 <span>656 655 9713 <em class="es-text">(Oficina)</em><em class="en-text">(Office)</em></span>
+          </a>
+          <a href="https://wa.me/526565514028" target="_blank" class="contact-item">
+            💬 <span>656 551 4028 <em>WhatsApp</em></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="es-text">Horarios</h4>
+        <h4 class="en-text">Hours</h4>
+        <ul class="hours-list">
+          <li>
+            <span class="day es-text">Lun – Vie</span><span class="day en-text">Mon – Fri</span>
+            <span>11:00 – 18:30</span>
+          </li>
+          <li>
+            <span class="day es-text">Sábado</span><span class="day en-text">Saturday</span>
+            <span>11:00 – 16:00</span>
+          </li>
+          <li>
+            <span class="day es-text">Domingo</span><span class="day en-text">Sunday</span>
+            <span class="closed es-text">Cerrado</span><span class="closed en-text">Closed</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Terra Agencia de Viajes. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
