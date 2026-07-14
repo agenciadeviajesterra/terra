@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terra Agencia de Viajes | Cumpliendo el viaje de tus sueños</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ══ MODALES DE GALERÍA ══ -->
+
+  <input type="checkbox" id="modal-nacional" class="modal-toggle">
+  <div class="modal-overlay">
+    <label for="modal-nacional" class="modal-backdrop"></label>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Viajecito – Destinos Nacionales</h3>
+        <label for="modal-nacional" class="modal-close">✕</label>
+      </div>
+      <div class="modal-gallery" id="gallery-nacional"></div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="modal-promo" class="modal-toggle">
+  <div class="modal-overlay">
+    <label for="modal-promo" class="modal-backdrop"></label>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Promociones del Mes</h3>
+        <label for="modal-promo" class="modal-close">✕</label>
+      </div>
+      <div class="modal-gallery" id="gallery-promo"></div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="modal-intl" class="modal-toggle">
+  <div class="modal-overlay">
+    <label for="modal-intl" class="modal-backdrop"></label>
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Viajecito Internacional</h3>
+        <label for="modal-intl" class="modal-close">✕</label>
+      </div>
+      <div class="modal-gallery" id="gallery-intl"></div>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+
+      <a href="#hero" class="logo-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" class="logo-svg" aria-label="Terra Agencia de Viajes">
+          <text x="40"  y="370" fill="#00AEEF" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">Te</text>
+          <text x="365" y="370" fill="#2D52A2" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">rr</text>
+          <text x="615" y="370" fill="#2D52A2" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">a</text>
+          <text x="80"  y="450" fill="#2D52A2" font-family="Arial,Helvetica,sans-serif" font-size="52"  font-weight="bold" letter-spacing="11">AGENCIA DE VIAJES</text>
+          <path d="M 535,128 C 620,35 760,30 860,95 C 960,160 990,290 945,390" fill="none" stroke="#00AEEF" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 945,390 C 910,465 815,515 720,500 C 600,480 525,360 555,250" fill="none" stroke="#2D52A2" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 765,375 C 840,365 860,260 810,195 C 785,162 745,155 725,153" fill="none" stroke="#2D52A2" stroke-width="6" stroke-linecap="round"/>
+          <path d="M 724,110 L 692,132 L 655,110 C 650,107 645,112 648,117 L 670,148 L 668,172 L 680,164 L 688,176 C 690,179 695,178 694,174 L 691,162 L 704,154 L 733,180 C 737,184 743,180 740,175 L 722,142 L 734,124 C 737,118 731,114 724,110 Z" fill="#2D52A2"/>
+        </svg>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="#hero"     class="nav-link">Inicio</a>
+        <a href="#destinos" class="nav-link">Destinos</a>
+        <a href="#cotizar"  class="nav-link">Cotizar</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="nav-right">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+        <label for="menu-toggle" class="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#hero"     class="mobile-link">Inicio</a>
+      <a href="#destinos" class="mobile-link">Destinos</a>
+      <a href="#cotizar"  class="mobile-link">Cotizar</a>
+      <a href="#contacto" class="mobile-link">Contacto</a>
+    </div>
+  </header>
+
+  <!-- ══ HERO – SLIDER CINEMÁTICO ══ -->
+  <section id="hero" class="hero-section">
+
+    <div class="slide slide-1 active">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content container">
+        <span class="slide-eyebrow">🌄 México te espera</span>
+        <h1>Pueblos Mágicos<br><em>&amp; Playas Mexicanas</em></h1>
+        <p>Descubre la magia de México: desde coloridos pueblos coloniales hasta playas paradisíacas de aguas turquesa.</p>
+        <div class="slide-actions">
+          <label for="modal-nacional" class="btn btn-primary">Ver destinos</label>
+          <a href="#cotizar" class="btn btn-ghost">Cotizar ahora</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide slide-2">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slide-overlay slide-overlay--blue"></div>
+      <div class="slide-content container">
+        <span class="slide-eyebrow">✈️ El mundo te llama</span>
+        <h1>Viajes<br><em>Internacionales</em></h1>
+        <p>Europa, Asia, el Caribe y más — diseñamos tu itinerario exclusivo a cualquier rincón del mundo.</p>
+        <div class="slide-actions">
+          <label for="modal-intl" class="btn btn-primary">Ver destinos</label>
+          <a href="#cotizar" class="btn btn-ghost">Cotizar ahora</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide slide-3">
+      <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80')"></div>
+      <div class="slide-overlay slide-overlay--teal"></div>
+      <div class="slide-content container">
+        <span class="slide-eyebrow">🏷️ Ofertas exclusivas</span>
+        <h1>Promociones<br><em>del Mes</em></h1>
+        <p>Las mejores tarifas en destinos nacionales e internacionales, solo por tiempo limitado.</p>
+        <div class="slide-actions">
+          <label for="modal-promo" class="btn btn-primary">Ver promociones</label>
+          <a href="#cotizar" class="btn btn-ghost">Solicitar cotización</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-dots">
+      <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="dot"        data-slide="1" aria-label="Slide 2"></button>
+      <button class="dot"        data-slide="2" aria-label="Slide 3"></button>
+    </div>
+    <button class="slider-arrow slider-prev" aria-label="Anterior">&#8592;</button>
+    <button class="slider-arrow slider-next" aria-label="Siguiente">&#8594;</button>
+  </section>
+
+  <!-- ══ DESTINOS ══ -->
+  <section id="destinos" class="destinations-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Destinos</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="cards-grid">
+
+        <div class="dest-card">
+          <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1518638150340-f706e86654de?auto=format&fit=crop&w=900&q=80')">
+            <div class="dest-card-overlay"></div>
+            <div class="dest-card-inner">
+              <span class="dest-tag">Nacional</span>
+              <h3>Viajecito</h3>
+              <p>Playas, pueblos mágicos y ciudades icónicas de México.</p>
+              <label for="modal-nacional" class="btn btn-card">Ver destinos ›</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="dest-card">
+          <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80')">
+            <div class="dest-card-overlay"></div>
+            <div class="dest-card-inner">
+              <span class="dest-tag promo-tag">Ofertas</span>
+              <h3>Promociones</h3>
+              <p>Ofertas especiales del mes: nacionales e internacionales.</p>
+              <label for="modal-promo" class="btn btn-card">Ver promociones ›</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="dest-card">
+          <div class="dest-card-img" style="background-image:url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=900&q=80')">
+            <div class="dest-card-overlay"></div>
+            <div class="dest-card-inner">
+              <span class="dest-tag">Internacional</span>
+              <h3>Viajecito Internacional</h3>
+              <p>Europa, Asia, el Caribe y más — el mundo es tuyo.</p>
+              <label for="modal-intl" class="btn btn-card">Ver destinos ›</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COTIZAR ══ -->
+  <section id="cotizar" class="booking-section">
+    <div class="container">
+      <div class="booking-layout">
+
+        <div class="booking-info">
+          <h2>Planea tu<br>Próxima Aventura</h2>
+          <p>Completa el formulario y te contactamos para presentarte un itinerario exclusivo sin costo. Confirmación por correo y WhatsApp.</p>
+          <div class="booking-badges">
+            <span class="bbadge">👩‍💼 Empresa Liderada por Mujeres</span>
+            <span class="bbadge">⭐⭐⭐⭐⭐ 5.0 en Google</span>
+            <span class="bbadge">📋 Registro Nacional de Turismo</span>
+          </div>
+        </div>
+
+        <div class="booking-form-card">
+          <form
+            action="https://formspree.io/f/mwvjlkky"
+            method="POST"
+            id="quote-form">
+
+            <input type="hidden" name="_subject"  id="hidden-subject" value="Nueva cotización – Terra Agencia de Viajes">
+            <input type="hidden" name="tipo_viaje" id="hidden-tipo"    value="">
+
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required autocomplete="name">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+52 656 000 0000" required autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="whatsapp">WhatsApp</label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="+52 656 000 0000" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Platícanos de tu viaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5"
+                placeholder="¿A dónde quieres ir? ¿Cuándo? ¿Cuántas personas? ¿Alguna preferencia especial?…"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">
+              Solicitar Cotización Gratis
+            </button>
+
+            <p class="form-note">Sin costo ni compromiso. Te respondemos a la brevedad.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER / CONTACTO ══ -->
+  <footer id="contacto" class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-col footer-brand">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" class="footer-logo-svg" aria-label="Terra">
+          <text x="40"  y="370" fill="#00AEEF" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">Te</text>
+          <text x="365" y="370" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">rr</text>
+          <text x="615" y="370" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="330" font-weight="bold">a</text>
+          <text x="80"  y="450" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="52"  font-weight="bold" letter-spacing="11">AGENCIA DE VIAJES</text>
+          <path d="M 535,128 C 620,35 760,30 860,95 C 960,160 990,290 945,390" fill="none" stroke="#00AEEF" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 945,390 C 910,465 815,515 720,500 C 600,480 525,360 555,250" fill="none" stroke="#ffffff" stroke-width="24" stroke-linecap="round"/>
+          <path d="M 765,375 C 840,365 860,260 810,195 C 785,162 745,155 725,153" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"/>
+          <path d="M 724,110 L 692,132 L 655,110 C 650,107 645,112 648,117 L 670,148 L 668,172 L 680,164 L 688,176 C 690,179 695,178 694,174 L 691,162 L 704,154 L 733,180 C 737,184 743,180 740,175 L 722,142 L 734,124 C 737,118 731,114 724,110 Z" fill="#ffffff"/>
+        </svg>
+
+        <p>Hacemos realidad tus sueños de viaje con la mejor atención y tarifas del mercado.</p>
+
+        <ul class="credentials">
+          <li>🏢 Agencia establecida</li>
+          <li>📋 Registro Nacional de Turismo</li>
+          <li>🏅 Distintivo M</li>
+          <li>🤝 Miembro activo – Sección especializada CANACO Cd. Juárez</li>
+        </ul>
+
+        <div class="social-row">
+          <a href="https://www.facebook.com/Viajes.Terra" target="_blank" rel="noopener" class="fb-link" aria-label="Facebook">
+            <svg class="fb-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12a10 10 0 1 0-11.563 9.876v-6.988H7.898V12h2.539V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.888h-2.33v6.988A10.003 10.003 0 0 0 22 12z"/>
+            </svg>
+            Viajes Terra
+          </a>
+          <a href="https://www.facebook.com/Viajes.Terra/reviews" target="_blank" class="review-link">⭐⭐⭐⭐⭐ 21 Reseñas</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Ubicación</h4>
+        <address>
+          Av. Benjamín Franklin 3220 – Local 5H<br>
+          Margaritas, 32315 Juárez, Chih.<br>
+          <small>(Plaza de las Américas)</small>
+        </address>
+        <div class="contact-links">
+          <a href="tel:6566559713" class="contact-item">
+            📞 656 655 9713 <em>(Oficina)</em>
+          </a>
+          <a href="https://wa.me/526565514028" target="_blank" class="contact-item">
+            💬 656 551 4028 <em>WhatsApp</em>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Horarios</h4>
+        <ul class="hours-list">
+          <li><span class="day">Lun – Vie</span><span>11:00 – 18:30</span></li>
+          <li><span class="day">Sábado</span><span>11:00 – 16:00</span></li>
+          <li><span class="day">Domingo</span><span class="closed">Cerrado</span></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Terra Agencia de Viajes. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
